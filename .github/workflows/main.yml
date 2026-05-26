@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
-      matrix: browsers:[chrome,firefox,edge]
-
+      matrix:
+        browser: [chrome, firefox, edge]
     steps:
       - name: Checkout
         uses: actions/checkout@v6
