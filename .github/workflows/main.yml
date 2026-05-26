@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [chrome, firefox, edge]
+        browsers: [chrome, firefox, edge]
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -19,7 +19,7 @@ jobs:
       - name: Cypress run in ${{ matrix.browsers}}
         uses: cypress-io/github-action@v7
         with:
-          browsers: ${{ matrix.browsers}}
+          browser: ${{ matrix.browsers}}
           command: npx cypress run --browser ${{ matrix.browsers }} --reporter-options reportDir=cypress/reports/${{ matrix.browsers }}
 
       - name: Merge Mochawesome Reports
